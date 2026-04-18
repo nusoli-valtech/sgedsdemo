@@ -17,13 +17,18 @@ export default async function decorate(block) {
     const item = data?.data?.articleByPath?.item;
     if (!item) throw new Error('No item in response');
 
+    const imagePath = item.image?._path ?? '';
+    const title = item.title ?? '';
+
     block.innerHTML = `
-      <article class="article-teaser">
-        <h2>${item.title ?? ''}</h2>
-        <div class="body">${item.body?.html ?? ''}</div>
-      </article>
+      <div class="article-hero">
+        ${imagePath ? `<img src="${imagePath}" alt="${title}">` : ''}
+        <div class="article-hero-overlay">
+          <h2>${title}</h2>
+        </div>
+      </div>
     `;
   } catch (err) {
-    console.error('Article teaser failed:', err);
+    console.error('Article hero failed:', err);
   }
 }
