@@ -1,4 +1,5 @@
 const GRAPHQL_ENDPOINT = 'https://publish-p23458-e585661.adobeaemcloud.com/graphql/execute.json/sgedsdemo/article-by-path';
+const PUBLISH_BASE = 'https://publish-p23458-e585661.adobeaemcloud.com';
 
 export default async function decorate(block) {
   const link = block.querySelector('a');
@@ -17,18 +18,25 @@ export default async function decorate(block) {
     const item = data?.data?.articleByPath?.item;
     if (!item) throw new Error('No item in response');
 
-    const imagePath = item.image?._path ?? '';
+    const imageRelPath = item.image?._path ?? '';
+    const imageUrl = imageRelPath.startsWith('/content/')
+      ? `${PUBLISH_BASE}${imageRelPath}`
+      : imageRelPath;
     const title = item.title ?? '';
+    const body = item.body?.html ?? '';
 
     block.innerHTML = `
-      <div class="article-hero">
-        ${imagePath ? `<img src="${imagePath}" alt="${title}">` : ''}
-        <div class="article-hero-overlay">
-          <h2>${title}</h2>
+      <div class="article-hero-centered">
+        ${imageUrl ? `<img src="${imageUrl}" alt="${title}">` : ''}
+        <div class="article-hero-centered-overlay">
+          <div class="article-hero-centered-content">
+            <h2>${title}</h2>
+            <div class="body">${body}</div>
+          </div>
         </div>
       </div>
     `;
   } catch (err) {
-    console.error('Article hero failed:', err);
+    console.error('Article hero centered failed:', err);
   }
 }
