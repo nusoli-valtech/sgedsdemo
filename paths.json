@@ -3,6 +3,7 @@
     "/content/sgedsdemo/:/"
   ],
   "includes": [
-    "/content/sgedsdemo/"
+    "/content/sgedsdemo/",
+    "/content/dam/sgedsdemo/"
   ]
 }
