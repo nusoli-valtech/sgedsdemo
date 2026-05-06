@@ -35,7 +35,12 @@ Every feature ships with a working implementation **and** a step-by-step `docs/<
   2. Every reference to the AEM Author host and the project codename (`sgedsdemo`, `--main--*--*`) flows through one config module — there are zero hardcoded `publish-p23458-*` strings anywhere in `blocks/` or `scripts/`.
   3. A pre-commit grep guard fails any commit that introduces a new `publish-p23458-*` reference, so the no-Publish constraint cannot regress.
   4. `scripts/dompurify.min.js` is the npm 3.4.2 build (header comment records version + source URL) and is import-ready for Phase 2 to wire into the CFO render path.
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [ ] 01-01-PLAN.md — Null-guard family: applyChanges + header/footer fragment guards (SET-01)
+- [ ] 01-02-PLAN.md — Central config module scripts/config.js (SET-02)
+- [ ] 01-03-PLAN.md — Pre-commit guard rejecting publish-host references (SET-03)
+- [ ] 01-04-PLAN.md — DOMPurify 3.4.2 vendored upgrade with provenance header (SET-04)
 **Open questions to resolve here**: none — this phase is mechanical
 **Key risks**: very low; all four items are surgical edits with carry-forward sources in `.planning/codebase/CONCERNS.md` (CF-EXISTING-3, CF-EXISTING-4)
 
@@ -116,7 +121,7 @@ Phase 5 (HTML Fragment API) is configuration-only — no new runtime JS code. **
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Setup & Foundation | 0/0 | Not started | - |
+| 1. Setup & Foundation | 0/4 | Not started | - |
 | 2. Content Fragment Overlay | 0/0 | Not started | - |
 | 3. Placeholders | 0/0 | Not started | - |
 | 4. Adobe Target Integration | 0/0 | Not started | - |
