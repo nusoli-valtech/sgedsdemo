@@ -214,5 +214,19 @@
         "valueType": "string"
       }
     ]
-  }
+  },
+  {
+  "id": "article-reference",
+  "fields": [
+    {
+      "component": "aem-content-fragment",
+      "name": "articleRef",
+      "label": "Article",
+      "valueType": "string",
+      "validation": {
+        "rootPath": "/content/dam/sgedsdemo/articles"
+      }
+    }
+  ]
+}
 ]
