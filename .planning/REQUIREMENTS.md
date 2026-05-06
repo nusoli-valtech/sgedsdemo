@@ -128,56 +128,57 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SET-01 | TBD | Pending |
-| SET-02 | TBD | Pending |
-| SET-03 | TBD | Pending |
-| SET-04 | TBD | Pending |
-| CFO-01 | TBD | Pending |
-| CFO-02 | TBD | Pending |
-| CFO-03 | TBD | Pending |
-| CFO-04 | TBD | Pending |
-| CFO-05 | TBD | Pending |
-| CFO-06 | TBD | Pending |
-| CFO-07 | TBD | Pending |
-| CFO-08 | TBD | Pending |
-| CFO-09 | TBD | Pending |
-| CFO-10 | TBD | Pending |
-| PH-01 | TBD | Pending |
-| PH-02 | TBD | Pending |
-| PH-03 | TBD | Pending |
-| PH-04 | TBD | Pending |
-| PH-05 | TBD | Pending |
-| PH-06 | TBD | Pending |
-| PH-07 | TBD | Pending |
-| PH-08 | TBD | Pending |
-| TGT-01 | TBD | Pending |
-| TGT-02 | TBD | Pending |
-| TGT-03 | TBD | Pending |
-| TGT-04 | TBD | Pending |
-| TGT-05 | TBD | Pending |
-| TGT-06 | TBD | Pending |
-| TGT-07 | TBD | Pending |
-| TGT-08 | TBD | Pending |
-| TGT-09 | TBD | Pending |
-| TGT-10 | TBD | Pending |
-| API-01 | TBD | Pending |
-| API-02 | TBD | Pending |
-| API-03 | TBD | Pending |
-| API-04 | TBD | Pending |
-| API-05 | TBD | Pending |
-| API-06 | TBD | Pending |
-| API-07 | TBD | Pending |
-| DOC-01 | TBD | Pending |
-| DOC-02 | TBD | Pending |
-| DOC-03 | TBD | Pending |
-| DOC-04 | TBD | Pending |
-| DOC-05 | TBD | Pending |
+| SET-01 | Phase 1 | Pending |
+| SET-02 | Phase 1 | Pending |
+| SET-03 | Phase 1 | Pending |
+| SET-04 | Phase 1 | Pending |
+| CFO-01 | Phase 2 | Pending |
+| CFO-02 | Phase 2 | Pending |
+| CFO-03 | Phase 2 | Pending |
+| CFO-04 | Phase 2 | Pending |
+| CFO-05 | Phase 2 | Pending |
+| CFO-06 | Phase 2 | Pending |
+| CFO-07 | Phase 2 | Pending |
+| CFO-08 | Phase 2 | Pending |
+| CFO-09 | Phase 2 | Pending |
+| CFO-10 | Phase 2 | Pending |
+| PH-01 | Phase 3 | Pending |
+| PH-02 | Phase 3 | Pending |
+| PH-03 | Phase 3 | Pending |
+| PH-04 | Phase 3 | Pending |
+| PH-05 | Phase 3 | Pending |
+| PH-06 | Phase 3 | Pending |
+| PH-07 | Phase 3 | Pending |
+| PH-08 | Phase 3 | Pending |
+| TGT-01 | Phase 4 | Pending |
+| TGT-02 | Phase 4 | Pending |
+| TGT-03 | Phase 4 | Pending |
+| TGT-04 | Phase 4 | Pending |
+| TGT-05 | Phase 4 | Pending |
+| TGT-06 | Phase 4 | Pending |
+| TGT-07 | Phase 4 | Pending |
+| TGT-08 | Phase 4 | Pending |
+| TGT-09 | Phase 4 | Pending |
+| TGT-10 | Phase 4 | Pending |
+| API-01 | Phase 5 | Pending |
+| API-02 | Phase 5 | Pending |
+| API-03 | Phase 5 | Pending |
+| API-04 | Phase 5 | Pending |
+| API-05 | Phase 5 | Pending |
+| API-06 | Phase 5 | Pending |
+| API-07 | Phase 5 | Pending |
+| DOC-01 | Phase 2 | Pending |
+| DOC-02 | Phase 3 | Pending |
+| DOC-03 | Phase 4 | Pending |
+| DOC-04 | Phase 5 | Pending |
+| DOC-05 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 44 total
-- Mapped to phases: 0 (filled in by roadmap)
-- Unmapped: 44 ⚠️ (resolved by roadmap creation)
+- Mapped to phases: 44
+- Unmapped: 0
 
 ---
+
 *Requirements defined: 2026-05-06*
-*Last updated: 2026-05-06 after initial definition*
+*Last updated: 2026-05-06 after roadmap creation (traceability table populated; coverage 44/44)*
