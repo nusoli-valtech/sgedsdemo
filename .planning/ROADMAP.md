@@ -16,7 +16,7 @@ Every feature ships with a working implementation **and** a step-by-step `docs/<
 
 ## Phases
 
-- [ ] **Phase 1: Setup & Foundation** — Pre-feature fixes that unblock every subsequent phase (UE patch crash, hostname coupling, no-Publish guard, DOMPurify upgrade)
+- [x] **Phase 1: Setup & Foundation** — Pre-feature fixes that unblock every subsequent phase (UE patch crash, hostname coupling, no-Publish guard, DOMPurify upgrade) (completed 2026-05-07)
 - [ ] **Phase 2: Content Fragment Overlay** — Replace broken Publish-GraphQL article blocks with the json2html overlay pipeline; close the inherited XSS in the same PR
 - [ ] **Phase 3: Placeholders** — Generic `{{key}}` resolver runnable in any text block, sourced from a `/placeholders.json` spreadsheet, resolved before LCP and re-resolved after UE patches
 - [ ] **Phase 4: Adobe Target Integration** — Two demo activities (banner text + page logo) wired across all three EDS phases via vendored alloy + aem-martech, gated on per-page metadata, with scoped pre-hide
@@ -37,10 +37,10 @@ Every feature ships with a working implementation **and** a step-by-step `docs/<
   4. `scripts/dompurify.min.js` is the npm 3.4.2 build (header comment records version + source URL) and is import-ready for Phase 2 to wire into the CFO render path.
 **Plans**: 4 plans
 Plans:
-- [ ] 01-01-PLAN.md — Null-guard family: applyChanges + header/footer fragment guards (SET-01)
-- [ ] 01-02-PLAN.md — Central config module scripts/config.js (SET-02)
-- [ ] 01-03-PLAN.md — Pre-commit guard rejecting publish-host references (SET-03)
-- [ ] 01-04-PLAN.md — DOMPurify 3.4.2 vendored upgrade with provenance header (SET-04)
+- [x] 01-01-PLAN.md — Null-guard family: applyChanges + header/footer fragment guards (SET-01)
+- [x] 01-02-PLAN.md — Central config module scripts/config.js (SET-02)
+- [x] 01-03-PLAN.md — Pre-commit guard rejecting publish-host references (SET-03)
+- [x] 01-04-PLAN.md — DOMPurify 3.4.2 vendored upgrade with provenance header (SET-04)
 **Open questions to resolve here**: none — this phase is mechanical
 **Key risks**: very low; all four items are surgical edits with carry-forward sources in `.planning/codebase/CONCERNS.md` (CF-EXISTING-3, CF-EXISTING-4)
 
@@ -121,7 +121,7 @@ Phase 5 (HTML Fragment API) is configuration-only — no new runtime JS code. **
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Setup & Foundation | 0/4 | Not started | - |
+| 1. Setup & Foundation | 4/4 | Complete   | 2026-05-07 |
 | 2. Content Fragment Overlay | 0/0 | Not started | - |
 | 3. Placeholders | 0/0 | Not started | - |
 | 4. Adobe Target Integration | 0/0 | Not started | - |
