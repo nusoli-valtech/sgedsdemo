@@ -54,7 +54,16 @@ Plans:
   3. When a CF reference is missing, broken, or returns 404, the article block degrades to an empty container with a single `console.error` and the rest of the page renders normally.
   4. Editing a referenced CF in Universal Editor re-decorates the article block in place (UE instrumentation preserved via `moveInstrumentation`) without a full page reload.
   5. `docs/content-fragment-overlay.md` walks a new contributor through the full setup — Admin API curl commands (`public.json`, `content.json`, json2html `/config`), Mustache template authoring at `cf-templates/article.html`, UE component-model wiring, and the smoke-test page path — end to end.
-**Plans**: TBD
+**Plans**: 8 plans
+Plans:
+- [ ] 02-01-cf-model-verify-create-PLAN.md — Wave 1: verify-or-create AEM `article` CF model + POST CFO Admin API config; capture responses (autonomous:false; CFO-01, CFO-02)
+- [ ] 02-02-json2html-config-PLAN.md — Wave 1: POST json2html worker `/config` registering `cf-templates/article.html` (autonomous:false; CFO-03)
+- [ ] 02-03-cf-overlay-spike-helper-PLAN.md — Wave 1: capture CF JSON + `.plain.html` samples; write `scripts/cf-overlay.js` with locked `assetUrl`/`fetchOverlay` exports (autonomous:false; CFO-02, CFO-08)
+- [ ] 02-04-mustache-template-PLAN.md — Wave 1: author `cf-templates/article.html` Mustache template (autonomous:true; CFO-03)
+- [ ] 02-05-article-hero-rewrite-PLAN.md — Wave 2: rewrite `blocks/article-hero/article-hero.js` + add `_article-hero.json` (autonomous:true; CFO-04, CFO-05, CFO-06, CFO-07, CFO-09)
+- [ ] 02-06-article-teaser-rewrite-PLAN.md — Wave 2: rewrite `blocks/article-teaser/article-teaser.js` + add `_article-teaser.json` + `head.html` cf-endpoint meta (autonomous:true; CFO-04, CFO-05, CFO-06, CFO-07, CFO-08, CFO-09)
+- [ ] 02-07-doc-content-fragment-overlay-PLAN.md — Wave 3: author `docs/content-fragment-overlay.md` end-to-end (autonomous:true; CFO-10, DOC-01)
+- [ ] 02-08-smoke-tests-PLAN.md — Wave 3: four smoke tests (zero publish-host requests, XSS inert, missing CF graceful, UE re-decoration in place) (autonomous:false; CFO-10)
 **UI hint**: yes
 **Open questions to resolve here**:
   - **OQ-1** — Does `*.aem.page` preview invoke the json2html overlay the same way as `*.aem.live`? Spike before locking implementation: log a raw response from both contexts and confirm parity.
@@ -122,7 +131,7 @@ Phase 5 (HTML Fragment API) is configuration-only — no new runtime JS code. **
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Setup & Foundation | 4/4 | Complete    | 2026-05-07 |
-| 2. Content Fragment Overlay | 0/0 | Not started | - |
+| 2. Content Fragment Overlay | 0/8 | Planned     | - |
 | 3. Placeholders | 0/0 | Not started | - |
 | 4. Adobe Target Integration | 0/0 | Not started | - |
 | 5. HTML Fragment API | 0/0 | Not started | - |
