@@ -9,10 +9,10 @@ Requirements for initial release. Each maps to roadmap phases. IDs follow the `.
 
 ### Setup (pre-Phase-1 fixes)
 
-- [ ] **SET-01**: `editor-support.js:26` `applyChanges` null-guard so UE patches on new blocks don't crash silently when `updates` is undefined
-- [ ] **SET-02**: Centralize the AEM Author host + project codename (`sgedsdemo`, `--main--*--*`) into a single config module so feature code doesn't hardcode publish/preview hostnames
-- [ ] **SET-03**: Pre-commit grep guard rejecting any new reference to `publish-p23458-` to enforce the no-Publish constraint
-- [ ] **SET-04**: Replace vendored `scripts/dompurify.min.js` with the npm 3.4.2 build, add a header comment with version + source URL, and confirm tree-shake-friendly export
+- [x] **SET-01**: `editor-support.js:26` `applyChanges` null-guard so UE patches on new blocks don't crash silently when `updates` is undefined
+- [x] **SET-02**: Centralize the AEM Author host + project codename (`sgedsdemo`, `--main--*--*`) into a single config module so feature code doesn't hardcode publish/preview hostnames
+- [x] **SET-03**: Pre-commit grep guard rejecting any new reference to `publish-p23458-` to enforce the no-Publish constraint
+- [x] **SET-04**: Replace vendored `scripts/dompurify.min.js` with the npm 3.4.2 build, add a header comment with version + source URL, and confirm tree-shake-friendly export
 
 ### Content Fragment Overlay (CFO)
 
@@ -128,10 +128,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SET-01 | Phase 1 | Pending |
-| SET-02 | Phase 1 | Pending |
-| SET-03 | Phase 1 | Pending |
-| SET-04 | Phase 1 | Pending |
+| SET-01 | Phase 1 | Complete |
+| SET-02 | Phase 1 | Complete |
+| SET-03 | Phase 1 | Complete |
+| SET-04 | Phase 1 | Complete |
 | CFO-01 | Phase 2 | Pending |
 | CFO-02 | Phase 2 | Pending |
 | CFO-03 | Phase 2 | Pending |

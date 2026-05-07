@@ -121,7 +121,7 @@ Phase 5 (HTML Fragment API) is configuration-only — no new runtime JS code. **
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Setup & Foundation | 4/4 | Complete   | 2026-05-07 |
+| 1. Setup & Foundation | 4/4 | Complete    | 2026-05-07 |
 | 2. Content Fragment Overlay | 0/0 | Not started | - |
 | 3. Placeholders | 0/0 | Not started | - |
 | 4. Adobe Target Integration | 0/0 | Not started | - |
