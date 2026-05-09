@@ -1,0 +1,91 @@
+{
+  "_note": "Captured 2026-05-09 from AEM Author GraphQL persisted query 'articleByPath' against the published phase-2-spike CF instance. This is the runtime-shape JSON (not a raw model export) — fields are: title (string), body (rich-text with markdown/json/plaintext/html variants), image (Content Reference). Used by plan 02-04 Mustache template to lock variable names. Note that CFO public.json points the source URL at /api/assets/...{path}.json (Assets API) — plan 02-03 spike must capture that shape too, since it may differ from this GraphQL response.",
+  "_model_path": "/conf/sgedsdemo/settings/dam/cfm/models/article",
+  "_model_title": "Article",
+  "_test_cf_path": "/content/dam/sgedsdemo/articles/phase-2-spike",
+  "_branch": "verify (model already existed)",
+  "data": {
+    "articleByPath": {
+      "item": {
+        "_path": "/content/dam/sgedsdemo/articles/phase-2-spike",
+        "_id": "cb1376fb-2c0d-4405-9042-eb525bd21d71",
+        "_variation": "master",
+        "title": "Phase 2 Spike Article",
+        "body": {
+          "markdown": "\\<p\\>Hello from the Phase 2 CF spike.\\</p\\>\n",
+          "json": [
+            {
+              "nodeType": "paragraph",
+              "content": [
+                {
+                  "nodeType": "text",
+                  "value": "<p>Hello from the Phase 2 CF spike.</p>"
+                }
+              ]
+            }
+          ],
+          "plaintext": "<p>Hello from the Phase 2 CF spike.</p>",
+          "html": "<p>&lt;p&gt;Hello from the Phase 2 CF spike.&lt;/p&gt;</p>"
+        },
+        "image": {
+          "_id": "72b53d00-e889-4cb9-9d33-999f2577bdb8",
+          "_path": "/content/dam/sgedsdemo/headless-is-here.png",
+          "_authorUrl": "https://author-p23458-e585661.adobeaemcloud.com/content/dam/sgedsdemo/headless-is-here.png",
+          "_publishUrl": "https://publish-p23458-e585661.adobeaemcloud.com/content/dam/sgedsdemo/headless-is-here.png",
+          "_dynamicUrl": "/adobe/dynamicmedia/deliver/dm-aid--72b53d00-e889-4cb9-9d33-999f2577bdb8/headless_is_here.jpg",
+          "_dmS7Url": null,
+          "title": "",
+          "description": "",
+          "type": "image",
+          "width": "750",
+          "height": "500",
+          "mimeType": "image/png",
+          "_smartCrops": null
+        },
+        "_variations": [],
+        "_metadata": {
+          "calendarMetadata": [
+            { "name": "jcr:created",          "value": "2026-05-09T09:03:29.279Z" },
+            { "name": "cq:lastPublished",     "value": "2026-05-09T09:04:36.842Z" },
+            { "name": "cq:lastModified",      "value": "2026-05-09T09:04:20.295Z" }
+          ],
+          "floatMetadata": [],
+          "booleanArrayMetadata": [],
+          "stringMetadata": [
+            { "name": "title",                       "value": "phase-2-spike" },
+            { "name": "description",                 "value": "" },
+            { "name": "cq:lastReplicationAction",    "value": "Activate" }
+          ],
+          "intMetadata": [],
+          "calendarArrayMetadata": [],
+          "stringArrayMetadata": [],
+          "floatArrayMetadata": [],
+          "intArrayMetadata": [],
+          "booleanMetadata": []
+        },
+        "_model": {
+          "_path": "/conf/sgedsdemo/settings/dam/cfm/models/article",
+          "title": "Article"
+        },
+        "_tags": []
+      },
+      "_references": [
+        {
+          "_id": "72b53d00-e889-4cb9-9d33-999f2577bdb8",
+          "_path": "/content/dam/sgedsdemo/headless-is-here.png",
+          "_authorUrl": "https://author-p23458-e585661.adobeaemcloud.com/content/dam/sgedsdemo/headless-is-here.png",
+          "_publishUrl": "https://publish-p23458-e585661.adobeaemcloud.com/content/dam/sgedsdemo/headless-is-here.png",
+          "_dynamicUrl": "/adobe/dynamicmedia/deliver/dm-aid--72b53d00-e889-4cb9-9d33-999f2577bdb8/headless_is_here.jpg",
+          "_dmS7Url": null,
+          "title": "",
+          "description": "",
+          "type": "image",
+          "width": "750",
+          "height": "500",
+          "mimeType": "image/png",
+          "_smartCrops": null
+        }
+      ]
+    }
+  }
+}

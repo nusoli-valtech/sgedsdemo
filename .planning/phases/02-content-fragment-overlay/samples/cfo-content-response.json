@@ -1,0 +1,9 @@
+{
+  "_note": "Captured 2026-05-09. Body of POST /config/nusoli-valtech/sites/sgedsdemo/content.json was reconciled by the admin service: response shows the existing markup-mode source (Helix delivery proxy at /bin/franklin.delivery/...) was kept unchanged. The originally proposed body in plan 02-01 (with {path}.html template var) was schema-rejected in favor of the existing flat-URL + suffix shape. This is fine — Helix already knows how to resolve content paths via fstab.yaml; the cf-overlay branch in public.json is what actually wires CFO routing.",
+  "source": {
+    "url": "https://author-p23458-e585661.adobeaemcloud.com/bin/franklin.delivery/nusoli-valtech/sgedsdemo/main",
+    "type": "markup",
+    "suffix": ".html"
+  },
+  "contentBusId": "342d4b97ec3d84048a19dce996fd85a04e2c13fb820260ca85d00fb7972"
+}

@@ -1,0 +1,44 @@
+{
+  "_note": "Captured 2026-05-09 from POST https://admin.hlx.page/config/nusoli-valtech/sites/sgedsdemo/public.json. Wrapped as JSON envelope (status_line + headers + body) so the file is valid JSON; raw response preserved verbatim in _raw_response.",
+  "request": {
+    "method": "POST",
+    "url": "https://admin.hlx.page/config/nusoli-valtech/sites/sgedsdemo/public.json",
+    "auth": "x-auth-token (Sidekick session)"
+  },
+  "status_line": "HTTP/2 200",
+  "headers": {
+    "content-type": "application/json",
+    "x-invocation-id": "e29f5765-c85a-4761-a1b1-06ca7dcbeb4f",
+    "cache-control": "no-store, private, must-revalidate",
+    "accept-ranges": "bytes",
+    "date": "Sat, 09 May 2026 09:28:41 GMT",
+    "via": "1.1 varnish",
+    "x-served-by": "cache-par-lfpg1960080-PAR",
+    "x-cache": "MISS",
+    "x-cache-hits": "0",
+    "x-timer": "S1778318921.051613,VS0,VE734",
+    "vary": "Accept-Encoding",
+    "strict-transport-security": "max-age=31557600",
+    "x-ratelimit-limit": "10",
+    "x-ratelimit-rate": "0.100",
+    "content-length": "347"
+  },
+  "body": {
+    "public": {
+      "cf-overlay": {
+        "source": {
+          "type": "json",
+          "url": "https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/{path}.json"
+        },
+        "overlay": {
+          "type": "json2html",
+          "config": "nusoli-valtech/sgedsdemo/main"
+        },
+        "models": [
+          "article"
+        ]
+      }
+    }
+  },
+  "_raw_response": "HTTP/2 200\ncontent-type: application/json\nx-invocation-id: e29f5765-c85a-4761-a1b1-06ca7dcbeb4f\ncache-control: no-store, private, must-revalidate\naccept-ranges: bytes\ndate: Sat, 09 May 2026 09:28:41 GMT\nvia: 1.1 varnish\nx-served-by: cache-par-lfpg1960080-PAR\nx-cache: MISS\nx-cache-hits: 0\nx-timer: S1778318921.051613,VS0,VE734\nvary: Accept-Encoding\nstrict-transport-security: max-age=31557600\nx-ratelimit-limit: 10\nx-ratelimit-rate: 0.100\ncontent-length: 347\n\n{\n  \"public\": {\n    \"cf-overlay\": {\n      \"source\": {\n        \"type\": \"json\",\n        \"url\": \"https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/{path}.json\"\n      },\n      \"overlay\": {\n        \"type\": \"json2html\",\n        \"config\": \"nusoli-valtech/sgedsdemo/main\"\n      },\n      \"models\": [\n        \"article\"\n      ]\n    }\n  }\n}"
+}
