@@ -1,0 +1,35 @@
+<!--
+  Mustache template for `article` Content Fragment model.
+
+  Source of truth for variable names: .planning/phases/02-content-fragment-overlay/samples/cf-json-sample.json
+  Worker config registered by plan 02-02 (json2html-config-PLAN).
+  Outer wrapper class `article-cf` is the CFO-1 marker asserted by scripts/cf-overlay.js
+  (fetchOverlay returns null if absent — see PITFALLS.md CFO-1).
+
+  Mustache rules (D-04 / D-05):
+    Plain-text fields use double-brace (HTML-escaped by default).
+    Rich-text body uses triple-brace (unescaped). Consumer-side DOMPurify
+    completes the XSS mitigation (see blocks/article-hero/article-hero.js
+    rewrite in plan 02-05). The body field is the ONLY triple-brace use in
+    this file — adding more would re-open the XSS surface Phase 2 closes.
+
+  Variable-shape note: the captured sample shows `properties.elements.<name>` is a
+  metadata envelope ({:type, dataType, title, value, ...}) and the actual content
+  lives in `.value`. Image fields are bare DAM-path strings (NOT nested {_path}
+  objects), so the <img src> reads `{{properties.elements.image.value}}`.
+-->
+<div class="article-cf" data-cf-id="{{properties.path}}">
+  {{#properties.elements.image.value}}
+    <picture>
+      <img src="{{properties.elements.image.value}}" alt="{{properties.elements.title.value}}" loading="lazy">
+    </picture>
+  {{/properties.elements.image.value}}
+
+  <div class="article-cf-header">
+    <h2>{{properties.elements.title.value}}</h2>
+  </div>
+
+  <div class="body">
+    {{{properties.elements.body.value}}}
+  </div>
+</div>
