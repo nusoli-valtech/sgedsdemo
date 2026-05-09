@@ -1,0 +1,78 @@
+{
+  "_note": "Captured 2026-05-09 from GET https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/articles/phase-2-spike.json (Adobe IMS browser session). Source paste was Siren-flavored and used unquoted keys + leading-colon special keys (`:type`, `cq:model`, `srn:paging`); we keep those exact keys so the file faithfully represents what the json2html worker will fetch at request time.",
+  "_runtime_shape": {
+    "title_path": "properties.elements.title.value",
+    "body_path": "properties.elements.body.value",
+    "image_path": "properties.elements.image.value",
+    "model_path": "properties.cq:model.path",
+    "elements_order_path": "properties.elementsOrder"
+  },
+  "_locked_for": [
+    "plan 02-04 Mustache: variable access path is properties.elements.<name>.value (NOT top-level {{title}})",
+    "plan 02-05/02-06 block rewrites: cfPath references resolve against this exact runtime shape",
+    "scripts/cf-overlay.js assetUrl: image values are bare DAM paths (e.g. /content/dam/sgedsdemo/headless-is-here.png) — identity transform is correct"
+  ],
+  "links": [
+    { "rel": ["self"],   "href": "https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/articles/phase-2-spike.json" },
+    { "rel": ["parent"], "href": "https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/articles.json" }
+  ],
+  "class": ["assets/asset"],
+  "actions": [
+    { "method": "DELETE", "name": "delete",          "href": "https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/articles/phase-2-spike", "title": "Delete" },
+    { "method": "PUT",    "name": "update-fragment", "href": "https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/articles/phase-2-spike", "type": "application/json", "title": "Update Content Fragment" }
+  ],
+  "properties": {
+    "publishedBy": "NICOLAS.USOLI@VALTECH.COM",
+    "metadata": {},
+    "created": 1778317409279,
+    "description": "",
+    "published": 1778317476842,
+    "title": "phase-2-spike",
+    "contentFragment": true,
+    "createdBy": "NICOLAS.USOLI@VALTECH.COM",
+    "elementsOrder": ["title", "body", "image"],
+    "elements": {
+      "title": {
+        "variationsOrder": [],
+        "translatable": false,
+        ":type": "string",
+        "variations": {},
+        "dataType": "string",
+        "title": "title",
+        "multiValue": false,
+        "value": "Phase 2 Spike Article"
+      },
+      "body": {
+        "variationsOrder": [],
+        "translatable": false,
+        ":type": "text/html",
+        "variations": {},
+        "dataType": "string",
+        "title": "body",
+        "multiValue": false,
+        "value": "<p>&lt;p&gt;Hello from the Phase 2 CF spike.&lt;/p&gt;</p>"
+      },
+      "image": {
+        "variationsOrder": [],
+        "translatable": false,
+        ":type": "string",
+        "variations": {},
+        "dataType": "string",
+        "title": "image",
+        "multiValue": false,
+        "value": "/content/dam/sgedsdemo/headless-is-here.png"
+      }
+    },
+    "name": "phase-2-spike",
+    "modified": 1778317460295,
+    "modifiedBy": "NICOLAS.USOLI@VALTECH.COM",
+    "cq:model": {
+      "path": "/conf/sgedsdemo/settings/dam/cfm/models/article"
+    },
+    "srn:paging": {
+      "total": 0,
+      "offset": 0,
+      "limit": 20
+    }
+  }
+}

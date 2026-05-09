@@ -1,0 +1,22 @@
+<!--
+Captured 2026-05-09 — pre-template state.
+
+GET https://main--sgedsdemo--nusoli-valtech.aem.page/content/dam/sgedsdemo/articles/phase-2-spike.plain.html
+  → 404
+GET https://main--sgedsdemo--nusoli-valtech.aem.live/content/dam/sgedsdemo/articles/phase-2-spike.plain.html
+  → 404
+
+PARITY: matches (both-404).
+
+Reason: the json2html worker is configured (plan 02-02) to fetch /cf-templates/article.html
+when rendering, but that file does not yet exist in the repo. Plan 02-04 ships it. After
+02-04 commits to main + the CF is republished, this URL should return rendered HTML. The
+follow-up smoke test (plan 02-08, success criterion 1) re-runs both curls and replaces
+this file with the post-template capture; until then, this sample documents the "before"
+state and proves the routing chain at least returns 404 (not 500 / DNS error / wrong-page
+200) — the rejection is structured.
+
+OQ-1 (aem.page vs aem.live parity) deferred to plan 02-08 smoke test once the rendered
+shape exists.
+-->
+404 Not Found
