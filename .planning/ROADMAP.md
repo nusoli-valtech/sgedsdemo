@@ -56,8 +56,8 @@ Plans:
   5. `docs/content-fragment-overlay.md` walks a new contributor through the full setup — Admin API curl commands (`public.json`, `content.json`, json2html `/config`), Mustache template authoring at `cf-templates/article.html`, UE component-model wiring, and the smoke-test page path — end to end.
 **Plans**: 8 plans
 Plans:
-- [ ] 02-01-cf-model-verify-create-PLAN.md — Wave 1: verify-or-create AEM `article` CF model + POST CFO Admin API config; capture responses (autonomous:false; CFO-01, CFO-02)
-- [ ] 02-02-json2html-config-PLAN.md — Wave 1: POST json2html worker `/config` registering `cf-templates/article.html` (autonomous:false; CFO-03)
+- [x] 02-01-cf-model-verify-create-PLAN.md — Wave 1: verify-or-create AEM `article` CF model + POST CFO Admin API config; capture responses (autonomous:false; CFO-01, CFO-02)
+- [x] 02-02-json2html-config-PLAN.md — Wave 1: POST json2html worker `/config` registering `cf-templates/article.html` (autonomous:false; CFO-03)
 - [ ] 02-03-cf-overlay-spike-helper-PLAN.md — Wave 1: capture CF JSON + `.plain.html` samples; write `scripts/cf-overlay.js` with locked `assetUrl`/`fetchOverlay` exports (autonomous:false; CFO-02, CFO-08)
 - [ ] 02-04-mustache-template-PLAN.md — Wave 1: author `cf-templates/article.html` Mustache template (autonomous:true; CFO-03)
 - [ ] 02-05-article-hero-rewrite-PLAN.md — Wave 2: rewrite `blocks/article-hero/article-hero.js` + add `_article-hero.json` (autonomous:true; CFO-04, CFO-05, CFO-06, CFO-07, CFO-09)
@@ -131,7 +131,7 @@ Phase 5 (HTML Fragment API) is configuration-only — no new runtime JS code. **
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Setup & Foundation | 4/4 | Complete    | 2026-05-07 |
-| 2. Content Fragment Overlay | 0/8 | Planned     | - |
+| 2. Content Fragment Overlay | 2/8 | In Progress|  |
 | 3. Placeholders | 0/0 | Not started | - |
 | 4. Adobe Target Integration | 0/0 | Not started | - |
 | 5. HTML Fragment API | 0/0 | Not started | - |
