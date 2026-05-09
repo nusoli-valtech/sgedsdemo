@@ -1,0 +1,19 @@
+{
+  "_note": "Captured 2026-05-09 — verified via GET to /config/nusoli-valtech/sgedsdemo/main after the POST. The corrected POST body was an array per https://www.aem.live/developer/json2html (the plan-time research had guessed a `models: { article: { ... } }` object shape; the worker actually requires an array of {path, endpoint, regex, template, useAEMMapping?} configs). The path prefix `/articles/` matches incoming delivered URLs; regex `/[^/]+$/` extracts the last segment as `{{id}}`; the worker fetches `/api/assets/sgedsdemo/articles/{{id}}.json` (Author tier Assets API) and renders it through `/cf-templates/article.html` (created in plan 02-04).",
+  "request": {
+    "method": "POST",
+    "url": "https://json2html.adobeaem.workers.dev/config/nusoli-valtech/sgedsdemo/main",
+    "verify_method": "GET (re-fetched after POST to confirm persistence)"
+  },
+  "status_line": "HTTP/1.1 200 OK",
+  "body": [
+    {
+      "path": "/articles/",
+      "endpoint": "https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/articles/{{id}}.json",
+      "regex": "/[^/]+$/",
+      "template": "/cf-templates/article.html",
+      "useAEMMapping": true
+    }
+  ],
+  "_raw_response": "[{\"path\":\"/articles/\",\"endpoint\":\"https://author-p23458-e585661.adobeaemcloud.com/api/assets/sgedsdemo/articles/{{id}}.json\",\"regex\":\"/[^/]+$/\",\"template\":\"/cf-templates/article.html\",\"useAEMMapping\":true}]"
+}
