@@ -1,34 +1,51 @@
-const GRAPHQL_ENDPOINT = 'https://publish-p23458-e585661.adobeaemcloud.com/graphql/execute.json/sgedsdemo/article-by-path';
+import { loadScript } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
+import { fetchOverlay } from '../../scripts/cf-overlay.js';
 
+/**
+ * Article Hero block — Content Fragment Overlay consumer.
+ *
+ * Replaces the legacy GraphQL fetch (Phase 1 D-04 carve-out: `publish-*` literal
+ * deleted) with `fetchOverlay(cfPath)` (plan 02-03 / D-03), sanitizes the
+ * rich-text body container with DOMPurify (D-04, default profile per D-05 — closes
+ * CP-2 XSS in the same PR as the migration), and preserves UE `data-aue-*`
+ * instrumentation via `moveInstrumentation` (CP-3 closure, mirrors `blocks/cards/cards.js:9,19`).
+ *
+ * On any error class (no link, non-DAM cfPath, fetch failure, missing wrapper
+ * marker, missing fields), the block degrades to an empty container with a single
+ * `console.error` (D-08). Block element + UE attrs preserved so authors can re-pick
+ * the CF in the UE side panel; saving triggers `applyChanges` → in-place re-render.
+ *
+ * @param {Element} block The block root element with a `<a href="/content/dam/...">` child.
+ */
 export default async function decorate(block) {
   const link = block.querySelector('a');
   if (!link) return;
-
   const cfPath = link.getAttribute('href').replace(/\.html$/, '');
-  if (!cfPath.startsWith('/content/dam/')) return;
 
-  const url = `${GRAPHQL_ENDPOINT};path=${cfPath}`;
-
-  try {
-    const resp = await fetch(url);
-    if (!resp.ok) throw new Error(`Fetch failed: ${resp.status}`);
-
-    const data = await resp.json();
-    const item = data?.data?.articleByPath?.item;
-    if (!item) throw new Error('No item in response');
-
-    const imagePath = item.image?._path ?? '';
-    const title = item.title ?? '';
-
-    block.innerHTML = `
-      <div class="article-hero">
-        ${imagePath ? `<img src="${imagePath}" alt="${title}">` : ''}
-        <div class="article-hero-overlay">
-          <h2>${title}</h2>
-        </div>
-      </div>
-    `;
-  } catch (err) {
-    console.error('Article hero failed:', err);
+  const fragment = await fetchOverlay(cfPath);
+  if (!fragment) {
+    // eslint-disable-next-line no-console
+    console.error('article-hero: missing CF', cfPath);
+    block.replaceChildren();
+    return;
   }
+
+  // D-04 wiring point: sanitize the rich-text body container ONLY (never
+  // fragment-wide — would strip data-aue-* from the wrapper). Default profile
+  // (D-05) matches scripts/editor-support.js:34 — the vendored UMD only
+  // attaches to window, so loadScript + window.DOMPurify is the in-tree pattern.
+  const body = fragment.querySelector('.body');
+  if (body) {
+    await loadScript(`${window.hlx.codeBasePath}/scripts/dompurify.min.js`);
+    body.innerHTML = window.DOMPurify.sanitize(body.innerHTML, { USE_PROFILES: { html: true } });
+  }
+
+  // CP-3 closure: move UE instrumentation from the source <a> (which UE injected
+  // with data-aue-* attrs identifying the cfReference field) to the new wrapper
+  // so click-to-edit survives the DOM swap.
+  const wrapper = fragment.firstElementChild;
+  if (wrapper) moveInstrumentation(link, wrapper);
+
+  block.replaceChildren(...fragment.childNodes);
 }

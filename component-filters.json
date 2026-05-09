@@ -8,8 +8,6 @@
   {
     "id": "section",
     "components": [
-      "article-hero",
-      "article-teaser",
       "text",
       "image",
       "button",
